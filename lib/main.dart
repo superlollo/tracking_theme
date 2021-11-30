@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_theme/new_track.dart';
+import 'package:tracking_theme/new_track_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +28,7 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   String? tipoPercorso = 'Urbano';
   String messaggio = '';
-  final TextEditingController chilometriController = TextEditingController();
+  //final TextEditingController chilometriController = TextEditingController();
   final List<String> tipiPercorso = ['Urbano', 'Extraurbano', 'Misto'];
 
   @override
@@ -42,7 +42,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             padding: EdgeInsets.zero,
             width: double.maxFinite,
             height: 100,
-            decoration: const BoxDecoration(color: Color(0xFFF5B872)),
+            decoration: const BoxDecoration(color: Color(0xFFFFD2AF)),
             child: Padding(
               padding: const EdgeInsets.only(
                 left: 24,
@@ -67,7 +67,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     padding: const EdgeInsets.only(left: 84),
                     child: ElevatedButton(
                       onPressed: () {
-                        MaterialPageRoute route = MaterialPageRoute(builder: (_) => new_track());
+                        MaterialPageRoute route = MaterialPageRoute(builder: (_) => new_track_screen());
                         Navigator.push(context, route);
                       },
                       child: const Text(
@@ -112,7 +112,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 right: 24
               ),
               child: TextField(
-                controller: chilometriController,
+                //controller: chilometriController,
                 keyboardType: TextInputType.text,
                 style: TextStyle(fontSize: 18, color: Colors.grey[800], height: 1),
                 decoration: InputDecoration(
@@ -175,7 +175,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   right: 36,
                   top: 24
                 ),
-                itemCount: 16,
+                itemCount: 8,
                 itemBuilder: (BuildContext context, int posizione){
                   return Card(
                     elevation: 2,
@@ -194,7 +194,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             ),
           ]),
         ),
-        backgroundColor: Color(0xFFF5B872));
+        backgroundColor: Color(0xFFFFD2AF));
   }
 }
   // void calcolaCosto() {
